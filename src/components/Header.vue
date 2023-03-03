@@ -22,6 +22,10 @@
 
 <style lang="scss" scoped>
     @use '../style/partials/_variables.scss' as *;
+    
+    .header{
+      background-color: black;
+    }
     .header-title{
         text-align: center;
         font-size: 2rem;

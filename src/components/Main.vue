@@ -57,6 +57,7 @@
 
     .card-wrapper{
         margin-top: 30px;
+        margin-bottom: 30px;
         border: 4px solid black;
     }
 
