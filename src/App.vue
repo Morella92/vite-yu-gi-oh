@@ -13,12 +13,13 @@
 
 <template>
   <div>
-    
+    <Header/>
+    <Main/>
   </div>
   
 </template>
 
 <style lang="scss">
-  @use './style/general.sass';
-  @use './style/partials/_variables.sass' as *;
+  @use './style/general.scss';
+  @use './style/partials/_variables.scss' as *;
 </style>

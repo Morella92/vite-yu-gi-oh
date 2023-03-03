@@ -21,7 +21,7 @@
 </template>
 
 <style lang="scss" scoped>
-    @use '../style/partials/_variables.sass' as *;
+    @use '../style/partials/_variables.scss' as *;
     .header{
         background-color: green;
     }
