@@ -19,5 +19,6 @@
 </template>
 
 <style lang="scss">
-  @use './style/_general.sass'
+  @use './style/general.sass';
+  @use './style/partials/_variables.sass' as *;
 </style>
