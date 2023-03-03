@@ -22,4 +22,7 @@
 <style lang="scss">
   @use './style/general.scss';
   @use './style/partials/_variables.scss' as *;
+  body{
+    background-color: green;
+  }
 </style>
