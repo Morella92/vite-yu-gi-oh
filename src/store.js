@@ -4,7 +4,9 @@ const store = reactive({
 
     cards: [],
 
-    search: ''
+    search: '',
+
+    archetype: ''
 })
 
 export default store

@@ -26,7 +26,7 @@
                 axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',{
                     params:{
                         fname: search,
-                        
+                        archetype: archetype
                     }
                 })
                 .then((res)=>{
@@ -55,7 +55,7 @@
     <main>
 
         <div class="container">
-            <Filter @searchCard="fetchCards()"/>
+            <Filter @searchCard="fetchCards()" @searchArchetype="fetchCards()"/>
         </div>
         <div class="container">
             <div class="card-wrapper">

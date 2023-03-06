@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <input class="input-style" type="text" placeholder="Cerca la tua carta" v-model="store.search"
-            @keyup.enter="$emit('searchCard')">
+            @keyup.enter="$emit('searchCard')" @keydown.enter.prevent="$emit('searchArchetype')">
         
     </div>
 
