@@ -24,13 +24,21 @@
                 const search = this.store.search
 
                 const race = this.store.raceOfCard
+                
+                let paramsObj = {
+                    params: {}
+                }
 
-                axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',{
-                    params:{
-                        fname: search,
-                        race: race,
-                    }
-                })
+                if (search) {
+                    paramsObj.params.fname = search
+                }
+
+                if (race) {
+                    paramsObj.params.race = race
+                }
+
+                axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',
+                    paramsObj)
                 .then((res)=>{
                     console.log(res)
                     console.log(res.data)

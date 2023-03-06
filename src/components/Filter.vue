@@ -32,6 +32,10 @@
             }
         },
         
+        methods: {
+
+            
+        }
     }
 </script>
 
