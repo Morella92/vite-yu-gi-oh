@@ -2,10 +2,12 @@
     import axios from 'axios'
     import Card from './Card.vue'
     import store from '../store'
+    import Filter from '../components/Filter.vue'
 
     export default {
         components:{
-            Card
+            Card,
+            Filter
         },
 
         data(){
@@ -19,13 +21,25 @@
             fetchCards(){
                 console.log('cards')
 
-                axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+                const search = this.store.search
+
+                axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',{
+                    params:{
+                        fname: search,
+                        
+                    }
+                })
                 .then((res)=>{
                     console.log(res)
                     console.log(res.data)
                     console.log(res.data.data)
 
                     this.store.cards = res.data.data
+                })
+                .catch((error) =>{
+                    console.log(error)
+
+                    this.store.cards=[]
                 })
             }
         },
@@ -39,15 +53,21 @@
 
 <template>
     <main>
+
+        <div class="container">
+            <Filter @searchCard="fetchCards()"/>
+        </div>
         <div class="container">
             <div class="card-wrapper">
                 <h2 class="wrapper-title">Card collection</h2>
-                <ul class="grid">
+                <ul v-if="store.cards.length > 0" class="grid">
                     <Card v-for="element in store.cards" :key="element.id" :card="element">
                     </Card>
                 </ul>
+                <div v-else class="notfound">
+                    Nessuna card trovata
+                </div>
             </div>
-           
         </div>
     </main>
 </template>
@@ -75,5 +95,11 @@
     }
     .card-image{
         width: 150px;
+    }
+
+    .notfound{
+        font-weight: bold;
+        font-size: 25px;
+        text-align: center;
     }
 </style>
