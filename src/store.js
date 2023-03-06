@@ -6,7 +6,8 @@ const store = reactive({
 
     search: '',
 
-    archetype: ''
+    archetypeName: '',
+
 })
 
 export default store
