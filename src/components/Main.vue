@@ -23,12 +23,12 @@
 
                 const search = this.store.search
 
-                const archetype = this.store.archetypeName
+                const race = this.store.raceOfCard
 
                 axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',{
                     params:{
                         fname: search,
-                        archetype_name: archetype,
+                        race: race,
                     }
                 })
                 .then((res)=>{
@@ -57,7 +57,7 @@
     <main>
 
         <div class="container">
-            <Filter @searchCard="fetchCards" @searchArchetype="fetchCards"/>
+            <Filter @searchCard="fetchCards" @selectRace="fetchCards"/>
         </div>
         <div class="container">
             <div class="card-wrapper">

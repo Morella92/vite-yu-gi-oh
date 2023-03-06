@@ -6,7 +6,7 @@ const store = reactive({
 
     search: '',
 
-    archetypeName: '',
+    raceOfCard: '',
 
 })
 
